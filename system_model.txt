@@ -1,0 +1,17 @@
+@startuml
+    skinparam classAttributeIconSize 0
+    entity AppUser implements UserDetails{
+        - Long: id
+        - String: name
+        - String: username
+        - String: email
+        - String: password
+        - UserRole: userRole
+        - Boolean: isLocked
+        - Boolean: isUnlocked
+    }
+    note right of AppUser::userRole
+        Enum
+    end note
+    note right of UserDetails : Interface from springframework.security
+@enduml
